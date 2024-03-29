@@ -21,6 +21,7 @@ const tenantMiddleware = async (req, res, next) => {
 
             req.tenantDBConnection = tenantDBConnection;
             req.tenantDBName = tenantDBName;
+            req.currentTenantSubdomain = subdomain;
             next();
         } catch (err) {
             console.error('Error setting up tenant database connection:', err);
